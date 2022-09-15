@@ -45,6 +45,7 @@ function App() {
 
     return `${result}%`;
   };
+  const resultFeedback = countTotalFeedback();
 
   return (
     <div className={s.container}>
@@ -56,12 +57,12 @@ function App() {
           />
         </Section>
         <Section title="Statistics">
-          {countTotalFeedback() > 0 ? (
+          {resultFeedback > 0 ? (
             <Statistics
               good={good}
               neutral={neutral}
               bad={bad}
-              total={countTotalFeedback()}
+              total={resultFeedback}
               positivePercentage={countPositiveFeedback()}
             />
           ) : (
